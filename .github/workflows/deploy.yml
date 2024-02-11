@@ -32,4 +32,4 @@ jobs:
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/techie:latest
             docker stop techie || true
             docker rm techie || true
-            docker run -d --name techie -p 3006:3006 ${{ secrets.DOCKERHUB_USERNAME }}/techie:latest
+            docker run -d --name techie --restart=unless-stopped -p 3006:3006 ${{ secrets.DOCKERHUB_USERNAME }}/techie:latest
