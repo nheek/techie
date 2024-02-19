@@ -1,17 +1,8 @@
-// const Box = ({ width, height, mainText, subText, link, iconSvg, backgroundColor, backgroundImage }) => {
-import Link from 'next/link';
-
-const MainBox = ({
+export default function MainBox({
   height, width, bgColor, textColor,
   mainText, subText,
   btnBgColor, btnTextColor, btnSVG, btnMainText, btnSubText
-}) => {
-  // const screenWidth = window.innerWidth;
-
-  // const boxStyle = {
-  //   height: screenWidth > 600 ? height : "450px",
-  //   width: width
-  // }
+}) {
   return (
     <div className={`${height} ${width} ${bgColor} ${textColor} rounded-[2rem] p-6 md:p-10 relative text-gray-300`}>
       <span className="text-xs">{subText}</span>
@@ -28,5 +19,3 @@ const MainBox = ({
     </div>
   );
 };
-
-export default MainBox;

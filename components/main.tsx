@@ -1,9 +1,3 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import styles from './layout.module.css';
-import utilStyles from '../styles/utils.module.css';
-import Link from 'next/link';
-import Header from '../components/header';
 import Box from '../components/box';
 import MainBox from '../components/main-box';
 

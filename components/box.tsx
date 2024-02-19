@@ -1,11 +1,4 @@
-// const Box = ({ width, height, mainText, subText, link, iconSvg, backgroundColor, backgroundImage }) => {
-import Link from 'next/link';
-
 const Box = ({ height, width, backgroundColor, fontColor, mainText, subText, iconSVG }) => {
-  // const boxStyle = {
-  //   height: height,
-  //   width: width
-  // }
   return (
     <div className={`${height} ${width} ${backgroundColor} ${fontColor} rounded-[2rem] p-6 relative cursor-pointer`}>
       <div className="flex relative">
