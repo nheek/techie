@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: techie-deployment
+  labels:
+    app: techie
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: techie
+  template:
+    metadata:
+      labels:
+        app: techie
+    spec:
+      imagePullSecrets:
+      - name: regcred
+      containers:
+      - name: techie
+        image: nheek/techie:latest
+        ports:
+        - containerPort: 3000
