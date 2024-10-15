@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: techie-deployment
+  namespace: static
   labels:
     app: techie
 spec:
@@ -21,3 +22,6 @@ spec:
         image: nheek/techie:latest
         ports:
         - containerPort: 3000
+        resources:
+          requests:
+            memory: "30Mi"
