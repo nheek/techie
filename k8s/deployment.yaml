@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: techie-deployment
+  name: techie-d
   namespace: static
   labels:
     app: techie
