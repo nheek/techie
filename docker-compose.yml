@@ -1,0 +1,7 @@
+services:
+  node-app:
+    build: .
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    image: "reg.nheek.com/nheek/techie:latest"

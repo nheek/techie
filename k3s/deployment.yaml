@@ -15,14 +15,14 @@ spec:
         app: techie
     spec:
       imagePullSecrets:
-      - name: regcred
+      - name: regcrednheek
       containers:
       - name: techie
-        image: nheek/techie:latest
+        image: reg.nheek.com/nheek/techie:latest
         ports:
         - containerPort: 3000
         resources:
           requests:
-            memory: "30Mi"
+            memory: "40Mi"
           limits:
             memory: "70Mi"
