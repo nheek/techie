@@ -15,14 +15,29 @@ spec:
         app: techie
     spec:
       imagePullSecrets:
-      - name: regcrednheek
+        - name: regcrednheek
       containers:
-      - name: techie
-        image: reg.nheek.com/nheek/techie:latest
-        ports:
-        - containerPort: 3000
-        resources:
-          requests:
-            memory: "40Mi"
-          limits:
-            memory: "70Mi"
+        - name: techie
+          image: reg.nheek.com/nheek/techie:latest
+          ports:
+            - containerPort: 3000
+          resources:
+            requests:
+              memory: "40Mi"
+              cpu: "40m"
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 3000
+            initialDelaySeconds: 10
+            periodSeconds: 2
+            timeoutSeconds: 2
+            failureThreshold: 10
+            successThreshold: 1
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 3000
+            initialDelaySeconds: 10
+            periodSeconds: 2
+            failureThreshold: 10
